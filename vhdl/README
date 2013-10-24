@@ -7,7 +7,7 @@ Loading over JTAG with AVR firmware:
     flcli -v 1d50:602b -p J:B3B2B0B1:fpga.xsvf
 
   PROM:
-    flcli -v 1d50:602b -p J:B3B2B0B1:fpga.xsvf
+    flcli -v 1d50:602b -p J:B3B2B0B1:prom.xsvf
     Note: for boot to work, M[2:0] links shorted & JP1 in "default" position.
 
   Connections
