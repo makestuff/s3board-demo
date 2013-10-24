@@ -1,0 +1,30 @@
+Examples of building the VHDL:
+
+  ../../../../bin/hdlmake.py -t ../templates/null -b s3board -p fpga prom
+
+Loading over JTAG with AVR firmware:
+  FPGA:
+    flcli -v 1d50:602b -p J:B3B2B0B1:fpga.xsvf
+
+  PROM:
+    flcli -v 1d50:602b -p J:B3B2B0B1:fpga.xsvf
+    Note: for boot to work, M[2:0] links shorted & JP1 in "default" position.
+
+  Connections
+    TDO -> PB3
+    TDI -> PB2
+    TMS -> PB0
+    TCK -> PB1
+
+Loading over Xilinx Slave Serial with AVR firmware:
+  FPGA:
+    flcli -v 1d50:602b -p XS:B0D0D1B1B2:top_level.bin
+    Note: M[2:0] links must be open.
+
+  Connections:
+    PROG -> PB0
+    INIT -> PD0
+    DONE -> PD1
+    CCLK -> PB1
+    DIN  -> PB2
+
